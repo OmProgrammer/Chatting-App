@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:messengere/repository/screens/widgets/uihelper.dart';
 
 import '../../../domain/constants/appcolors.dart';
+import '../bottomnav/bottomnavigationscreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   TextEditingController firstnameController = TextEditingController();
@@ -43,6 +44,7 @@ class ProfileScreen extends StatelessWidget {
               text: "First Name (Required)",
               textinputtype: TextInputType.name,
               context: context,
+              icondata: Icons.person
             ),
             SizedBox(height: 10),
             UiHelper.CustomTextField(
@@ -50,11 +52,14 @@ class ProfileScreen extends StatelessWidget {
               text: "Last Name (Required)",
               textinputtype: TextInputType.name,
               context: context,
+              icondata:CupertinoIcons.person_2
             ),
           ],
         ),
       ),
-      floatingActionButton:UiHelper.CustomButton(buttonname: "Save", callback:(){}),
+      floatingActionButton:UiHelper.CustomButton(buttonname: "Save", callback:(){
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>BottomNavScreen()));
+      }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }

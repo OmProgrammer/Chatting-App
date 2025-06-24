@@ -50,6 +50,7 @@ class LoginScreen extends StatelessWidget {
               text: "Phone Number",
               textinputtype: TextInputType.number,
               context: context,
+              icondata: Icons.phone
             ),
           ],
         ),

@@ -67,10 +67,11 @@ class UiHelper {
     required String text,
     required TextInputType textinputtype,
     required BuildContext context,
+    required IconData icondata
   }) {
     return Container(
       height: 45,
-      width: 327,
+      width: 360,
       decoration: BoxDecoration(
         color: Theme.of(context).brightness == Brightness.dark
             ? AppColors.containerdarkmode
@@ -78,12 +79,13 @@ class UiHelper {
         borderRadius: BorderRadius.circular(7),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.all(8.0),
         child: TextField(
           controller: controller,
           keyboardType: textinputtype,
           decoration: InputDecoration(
             hintText: text,
+            prefixIcon: Icon(icondata,color: AppColors.iconlight,),
             hintStyle: TextStyle(
               color: Theme.of(context).brightness == Brightness.dark
                   ? AppColors.hintdarkmode
